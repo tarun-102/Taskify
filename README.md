@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+# 🚀 Taskify - Smart Project & Task Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Taskify is a modern, full-stack MERN application designed to streamline team collaboration, project tracking, and task management. It provides a highly responsive UI and advanced state management to keep teams organized and productive.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
 
-## React Compiler
+* **Secure Authentication:** Robust user login, registration, and secure password update mechanisms with auto-logout.
+* **Dynamic Project Workspace:** Create, edit, delete, and track the overall progress of multiple projects.
+* **Task Management:** Assign tasks to specific team members, set priorities (Low/Medium/High), and track statuses (To Do/In Progress/Completed).
+* **Smart Notification System:** Get alerts for approaching due dates (within 3 days) and newly assigned tasks or projects.
+* **Team Collaboration:** Seamlessly add or remove team members from projects using real-time database queries.
+* **Responsive UI:** Clean and interactive design built with React-Bootstrap, fully optimized for both desktop and mobile views.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+* **Framework:** React.js (Vite)
+* **Language:** TypeScript
+* **State Management:** Redux Toolkit (RTK)
+* **Styling:** React-Bootstrap & Custom CSS
+* **HTTP Client:** Axios (with Interceptors)
+* **Alerts:** React-Toastify
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Backend
+* **Environment:** Node.js
+* **Framework:** Express.js
+* **Database:** MongoDB & Mongoose
+* **Security:** Bcrypt (Password Hashing) & JSON Web Tokens (JWT)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
 
-```
+Follow these steps to run the project locally on your machine.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Prerequisites
+* Node.js installed (v16 or higher)
+* MongoDB database running (Local or MongoDB Atlas)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Installation Steps
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/tarun-102/Taskify.git](https://github.com/tarun-102/Taskify.git)
 
-```
+   Navigate to the frontend directory and install dependencies:
+
+Bash
+cd Taskify
+npm install
+Configure Environment Variables:
+Create a .env file in the root directory and add your backend API URL and other necessary keys.
+
+Start the development server:
+
+Bash
+npm run dev
+🤝 Contribution
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page if you want to contribute.
