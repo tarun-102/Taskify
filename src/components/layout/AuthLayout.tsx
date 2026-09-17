@@ -5,8 +5,9 @@ import { useAppSelector } from "../../store/hooks";
 
 const AuthLayout: React.FC = () => {
   const { isAuthenticated } = useAppSelector((state) => state.auth);
+  const token = localStorage.getItem("token");
 
-  if (isAuthenticated) {
+  if (isAuthenticated || token) {
     return <Navigate to="/dashboard" replace />;
   }
 

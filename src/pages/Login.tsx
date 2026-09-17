@@ -17,8 +17,9 @@ const Login: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/dashboard");
+    const token = localStorage.getItem("token");
+    if (isAuthenticated || token) {
+      navigate("/dashboard", { replace: true });
     }
     return () => {
       dispatch(clearAuthError());

@@ -12,8 +12,9 @@ const Register: React.FC = () => {
   const { loading, error, isAuthenticated } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/dashboard');
+    const token = localStorage.getItem("token");
+    if (isAuthenticated || token) {
+      navigate('/dashboard', { replace: true });
     }
     return () => {
       dispatch(clearAuthError());

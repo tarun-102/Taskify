@@ -179,15 +179,38 @@ const TaskDetails: React.FC = () => {
                 <FiFolder className="text-secondary" /> Linked Project
               </h6>
               {relatedProject ? (
-                <div className="d-flex align-items-center gap-3 bg-light p-3 rounded-3 border border-light-subtle">
-                  <div className="rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0 shadow-sm" style={{ width: "48px", height: "48px", backgroundColor: getIconColor(relatedProject.projectName) }}>
-                    <FiFolder size={20} />
+                <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between gap-3 bg-light p-3 rounded-3 border border-light-subtle">
+                  <div className="d-flex align-items-center gap-3 overflow-hidden">
+                    <div
+                      className="rounded-circle d-flex align-items-center justify-content-center text-white flex-shrink-0 shadow-sm"
+                      style={{
+                        width: "44px",
+                        height: "44px",
+                        backgroundColor: getIconColor(relatedProject.projectName),
+                      }}
+                    >
+                      <FiFolder size={20} />
+                    </div>
+                    <div className="overflow-hidden">
+                      <h6 className="fw-bold text-dark mb-1 fs-6 text-break">
+                        {relatedProject.projectName}
+                      </h6>
+                      <span className="small text-muted fw-medium">
+                        Status:{" "}
+                        <span className="text-capitalize text-dark">
+                          {relatedProject.status || "Active"}
+                        </span>
+                      </span>
+                    </div>
                   </div>
-                  <div>
-                    <h6 className="fw-bold text-dark mb-1 fs-6">{relatedProject.projectName}</h6>
-                    <span className="small text-muted fw-medium">Status: <span className="text-capitalize text-dark">{relatedProject.status || "Active"}</span></span>
-                  </div>
-                  <button onClick={() => navigate(`/projects/${relatedProject._id || (relatedProject as any).id}`)} className="btn btn-outline-primary ms-auto rounded-pill px-4 fw-semibold shadow-sm">
+                  <button
+                    onClick={() =>
+                      navigate(
+                        `/projects/${relatedProject._id || (relatedProject as any).id}`,
+                      )
+                    }
+                    className="btn btn-outline-primary rounded-pill px-3 py-1.5 fw-semibold shadow-sm w-100 w-sm-auto text-nowrap"
+                  >
                     View Project
                   </button>
                 </div>

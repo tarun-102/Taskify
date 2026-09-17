@@ -73,6 +73,12 @@ const SettingsSidebar: React.FC<SettingsSidebarProps> = ({ onClose }) => {
           </NavLink>
         ))}
       </div>
+
+      <div className="mt-auto pt-3 border-top px-3 text-center">
+        <span className="text-muted small fw-semibold" style={{ fontSize: "11px" }}>
+          Taskify Platform v2.0
+        </span>
+      </div>
     </div>
   );
 };
