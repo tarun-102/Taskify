@@ -387,14 +387,14 @@ const ProjectDetails: React.FC = () => {
 
         {activeTab === "tasks" && (
           <div className="bg-white rounded-4 shadow-sm border border-light-subtle">
-            <div className="d-flex flex-column flex-lg-row justify-content-between align-items-stretch align-items-lg-center p-3 p-md-4 gap-3 border-bottom">
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center p-3 p-md-4 gap-3 border-bottom">
               <div className="d-flex flex-wrap gap-2">
                 <div onClick={() => setTaskFilter("all")} className={`filter-pill ${taskFilter === "all" ? "active" : "inactive"}`}>All ({projectTasks.length})</div>
                 <div onClick={() => setTaskFilter("todo")} className={`filter-pill ${taskFilter === "todo" ? "active" : "inactive"}`}>To Do</div>
                 <div onClick={() => setTaskFilter("in-progress")} className={`filter-pill ${taskFilter === "in-progress" ? "active" : "inactive"}`}>In Progress</div>
                 <div onClick={() => setTaskFilter("completed")} className={`filter-pill ${taskFilter === "completed" ? "active" : "inactive"}`}>Done</div>
               </div>
-              <button onClick={() => { setTaskModalType("add"); }} className="btn btn-primary rounded-pill px-4 py-2 shadow-sm d-flex align-items-center justify-content-center gap-2 fw-semibold w-100 w-lg-auto" style={{ backgroundColor: "#5850EC", border: "none" }}><FiPlus size={18} /> Add Task</button>
+              <button onClick={() => { setTaskModalType("add"); }} className="btn btn-primary rounded-pill px-3.5 py-2 shadow-sm d-flex align-items-center gap-2 fw-semibold flex-shrink-0" style={{ backgroundColor: "#5850EC", border: "none" }}><FiPlus size={18} /> Add Task</button>
             </div>
 
             <div className="d-none d-md-flex row g-0 bg-light px-4 py-3 border-bottom text-muted small fw-bold text-uppercase" style={{ letterSpacing: "0.5px", fontSize: "12px" }}>
@@ -420,9 +420,9 @@ const ProjectDetails: React.FC = () => {
 
         {activeTab === "members" && (
           <div className="bg-white rounded-4 shadow-sm border border-light-subtle p-3 p-md-4">
-            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center mb-4 gap-2.5">
+            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-4 gap-2.5">
               <h6 className="fw-bold mb-0 text-dark fs-5">Project Team ({projectMemberIds.length})</h6>
-              <button onClick={() => { setMemberModalType("add"); }} className="btn btn-primary rounded-pill px-4 py-2 shadow-sm d-flex align-items-center justify-content-center gap-2 fw-semibold w-100 w-sm-auto" style={{ backgroundColor: "#5850EC", border: "none" }}><FiPlus size={18} /> Add Member</button>
+              <button onClick={() => { setMemberModalType("add"); }} className="btn btn-primary rounded-pill px-3.5 py-2 shadow-sm d-flex align-items-center gap-2 fw-semibold flex-shrink-0" style={{ backgroundColor: "#5850EC", border: "none" }}><FiPlus size={18} /> Add Member</button>
             </div>
             {projectMemberIds.length > 0 ? (
               <div className="row g-3">
