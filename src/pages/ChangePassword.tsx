@@ -50,7 +50,7 @@ const ChangePassword: React.FC = () => {
   return (
     <div style={{ maxWidth: "850px" }}>
       <Card className="border-0 shadow-sm rounded-4 h-100">
-        <Card.Body className="p-4 p-lg-5">
+        <Card.Body className="p-3 p-sm-4 p-lg-5">
           <h5 className="fw-bold text-dark mb-2">Change Password</h5>
           <p className="text-muted small mb-4 pb-3 border-bottom">
             Ensure your account is using a long, random password to stay secure.

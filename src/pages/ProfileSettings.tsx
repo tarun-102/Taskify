@@ -82,7 +82,7 @@ const ProfileSettings: React.FC = () => {
       </div>
 
       <Card className="border-0 shadow-sm rounded-4 h-100">
-        <Card.Body className="p-4 p-lg-5">
+        <Card.Body className="p-3 p-sm-4 p-lg-5">
           <h5 className="fw-bold text-dark mb-4">Profile Information</h5>
 
           <div className="d-flex align-items-center gap-3 mb-4 pb-4 border-bottom">

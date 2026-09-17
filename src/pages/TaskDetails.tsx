@@ -124,19 +124,32 @@ const TaskDetails: React.FC = () => {
         </div>
 
         {/* Task Title Card */}
-        <div className="bg-white rounded-4 shadow-sm border border-light-subtle p-4 mb-4">
+        <div className="bg-white rounded-4 shadow-sm border border-light-subtle p-3 p-sm-4 mb-4">
           <div className="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
-            <div className="d-flex align-items-center gap-4">
-              <div className="rounded-4 d-flex align-items-center justify-content-center text-white shadow-sm flex-shrink-0" style={{ width: "70px", height: "70px", backgroundColor: getIconColor(task?.taskName || "") }}>
+            <div className="d-flex align-items-center gap-3 gap-sm-4">
+              <div
+                className="rounded-4 d-flex align-items-center justify-content-center text-white shadow-sm flex-shrink-0"
+                style={{
+                  width: "54px",
+                  height: "54px",
+                  backgroundColor: getIconColor(task?.taskName || ""),
+                }}
+              >
                 {getTaskIcon(task?.taskName || "")}
               </div>
-              <div>
-                <h3 className="fw-bold mb-2 fs-4 text-dark">{task?.taskName}</h3>
+              <div className="overflow-hidden">
+                <h3 className="fw-bold mb-1 fs-5 fs-md-4 text-dark text-break">
+                  {task?.taskName}
+                </h3>
                 <div className="d-flex flex-wrap gap-2">
-                  <span className={`badge border fw-medium text-capitalize px-3 py-1 ${getPriorityBadge(task?.priority || "")}`}>
+                  <span
+                    className={`badge border fw-medium text-capitalize px-2.5 py-1 ${getPriorityBadge(task?.priority || "")}`}
+                  >
                     {task?.priority || "low"} Priority
                   </span>
-                  <span className={`badge ${getStatusBadge(task?.status || "")} rounded-pill px-3 py-1 fw-medium text-capitalize shadow-sm`}>
+                  <span
+                    className={`badge ${getStatusBadge(task?.status || "")} rounded-pill px-2.5 py-1 fw-medium text-capitalize shadow-sm`}
+                  >
                     {task?.status || "todo"}
                   </span>
                 </div>

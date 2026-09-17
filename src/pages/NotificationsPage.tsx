@@ -137,7 +137,7 @@ const NotificationsPage: React.FC = () => {
         <span className="fw-bold text-dark">Back to Dashboard</span>
       </div>
 
-      <div className="mb-4 d-flex justify-content-between align-items-center">
+      <div className="mb-4 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2.5">
         <div>
           <h4 className="fw-bold text-dark mb-1">Notifications</h4>
           <p className="text-secondary small mb-0">
@@ -147,7 +147,7 @@ const NotificationsPage: React.FC = () => {
         {notifications.length > 0 && (
           <Button
             variant="light"
-            className="border shadow-sm px-3 py-2 fw-semibold d-flex align-items-center gap-2 text-dark"
+            className="border shadow-sm px-3 py-2 fw-semibold d-flex align-items-center gap-2 text-dark w-100 w-sm-auto justify-content-center"
             onClick={handleMarkAllAsRead}
             style={{ fontSize: "13px" }}
           >

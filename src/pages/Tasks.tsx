@@ -359,8 +359,8 @@ const Tasks: React.FC = () => {
         </button>
       </div>
 
-      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
-        <div className="position-relative w-100" style={{ maxWidth: "350px" }}>
+      <div className="d-flex flex-column flex-sm-row justify-content-between align-items-stretch align-items-sm-center gap-2.5 gap-sm-3 mb-4">
+        <div className="position-relative w-100" style={{ maxWidth: "400px" }}>
           <FiSearch
             className="position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"
             size={18}
@@ -376,8 +376,8 @@ const Tasks: React.FC = () => {
 
         <button
           onClick={() => setModalType("add")}
-          className="btn text-white px-4 py-2 rounded-3 fw-semibold shadow-sm d-flex align-items-center justify-content-center gap-2"
-          style={{ backgroundColor: "#5850EC", width: "max-content" }}
+          className="btn text-white px-3 px-sm-4 py-2 rounded-3 fw-semibold shadow-sm d-flex align-items-center justify-content-center gap-2 flex-shrink-0"
+          style={{ backgroundColor: "#5850EC" }}
         >
           <FiPlus size={20} /> Create New Task
         </button>

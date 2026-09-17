@@ -156,22 +156,25 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleSidebar }) => {
   const displayNotifs = unreadNotifs.slice(0, 3);
 
   return (
-    <header className="bg-white border-bottom px-4 py-3 d-flex align-items-center justify-content-between w-100">
-      <div className="d-flex align-items-center gap-3">
+    <header className="bg-white border-bottom px-3 px-sm-4 py-2 py-sm-3 d-flex align-items-center justify-content-between w-100">
+      <div className="d-flex align-items-center gap-2 gap-sm-3 text-truncate me-2">
         <button
-          className="btn btn-light d-lg-none p-1 border-0 rounded-3"
+          className="btn btn-light d-lg-none p-1.5 border-0 rounded-3 flex-shrink-0"
           onClick={onToggleSidebar}
+          aria-label="Toggle Sidebar"
         >
           <FiMenu size={22} />
         </button>
 
-        <h5 className="fw-bold text-dark mb-0">{getPageTitle()}</h5>
+        <h5 className="fw-bold text-dark mb-0 fs-6 fs-sm-5 text-truncate">
+          {getPageTitle()}
+        </h5>
       </div>
 
-      <div className="d-flex align-items-center gap-3 gap-md-4">
+      <div className="d-flex align-items-center gap-2 gap-sm-3 flex-shrink-0">
         <div
-          className="position-relative d-none d-sm-block"
-          style={{ width: "280px" }}
+          className="position-relative d-none d-md-block"
+          style={{ width: "220px", maxWidth: "280px" }}
         >
           <FiSearch
             className="position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"
@@ -180,7 +183,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleSidebar }) => {
           <Form.Control
             type="search"
             placeholder="Search tasks, projects..."
-            className="ps-5 bg-light border-0 rounded-pill small py-2 shadow-none"
+            className="ps-5 bg-light border-0 rounded-pill small py-1.5 shadow-none"
             style={{ fontSize: "0.85rem" }}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -192,10 +195,10 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleSidebar }) => {
           <Dropdown.Toggle
             variant="light"
             className="rounded-circle p-0 d-flex align-items-center justify-content-center position-relative bg-white border-0 shadow-none"
-            style={{ width: "36px", height: "36px" }}
+            style={{ width: "34px", height: "34px" }}
             id="dropdown-notification"
           >
-            <FiBell size={20} className="text-secondary" />
+            <FiBell size={18} className="text-secondary" />
             {unreadNotifs.length > 0 && (
               <Badge
                 bg="danger"
@@ -209,7 +212,7 @@ const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleSidebar }) => {
 
           <Dropdown.Menu
             className="border-0 shadow-lg p-0"
-            style={{ width: "320px", borderRadius: "12px", marginTop: "10px" }}
+            style={{ width: "min(320px, calc(100vw - 32px))", borderRadius: "12px", marginTop: "10px" }}
           >
             <div className="d-flex justify-content-between align-items-center p-3 border-bottom">
               <h6 className="fw-bold mb-0 text-dark">Notifications</h6>
