@@ -12,24 +12,29 @@ const ProtectedRoute: React.FC = () => {
   const [isChecking, setIsChecking] = useState(true);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      setIsChecking(false);
+      return;
+    }
+
+    if (user) {
+      setIsChecking(false);
+      return;
+    }
+
     const verifyUserSession = async () => {
       try {
-    
         await dispatch(checkAuth()).unwrap();
       } catch (error) {
         console.error('Authentication check failed:', error);
       } finally {
-     
         setIsChecking(false);
       }
     };
 
- 
-    if (!user) {
-      verifyUserSession();
-    } else {
-      setIsChecking(false);
-    }
+    verifyUserSession();
   }, [dispatch, user]);
 
 

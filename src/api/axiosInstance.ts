@@ -1,6 +1,8 @@
 import axios, { AxiosError } from "axios";
 
-const API_BASE_URL = import.meta.env.VITE_AUTH_API_URL;
+const API_BASE_URL =
+  import.meta.env.VITE_AUTH_API_URL ||
+  "https://taskify-5fow.onrender.com/api";
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
