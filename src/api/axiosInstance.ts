@@ -6,6 +6,7 @@ const API_BASE_URL =
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
+  timeout: 30000,
   headers: {
     "Content-Type": "application/json",
   },
@@ -34,7 +35,8 @@ axiosInstance.interceptors.response.use(
       localStorage.removeItem("token");
       localStorage.removeItem("user");
 
-      if (window.location.pathname !== "/login") {
+      const currentPath = window.location.pathname;
+      if (currentPath !== "/login" && currentPath !== "/register" && currentPath !== "/") {
         console.warn("Session expired. Redirecting to login...");
         window.location.href = "/login";
       }

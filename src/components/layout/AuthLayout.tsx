@@ -1,47 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
-import { useAppSelector, useAppDispatch } from "../../store/hooks";
-import { checkAuth } from "../../features/auth/authSlice";
+import { Container, Row, Col } from "react-bootstrap";
+import { useAppSelector } from "../../store/hooks";
 
 const AuthLayout: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const { isAuthenticated, user } = useAppSelector((state) => state.auth);
-  const [isChecking, setIsChecking] = useState(true);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (!token) {
-      setIsChecking(false);
-      return;
-    }
-
-    if (user) {
-      setIsChecking(false);
-      return;
-    }
-
-    const verifyUserSession = async () => {
-      try {
-        await dispatch(checkAuth()).unwrap();
-      } catch (error) {
-        console.error("Session verification failed:", error);
-      } finally {
-        setIsChecking(false);
-      }
-    };
-
-    verifyUserSession();
-  }, [dispatch, user]);
-
-  if (isChecking) {
-    return (
-      <div className="d-flex justify-content-center align-items-center vh-100 bg-white">
-        <Spinner animation="border" variant="primary" />
-      </div>
-    );
-  }
+  const { isAuthenticated } = useAppSelector((state) => state.auth);
 
   if (isAuthenticated) {
     return <Navigate to="/dashboard" replace />;

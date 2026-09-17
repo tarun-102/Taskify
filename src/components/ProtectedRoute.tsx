@@ -7,9 +7,9 @@ import { checkAuth } from '../features/auth/authSlice';
 const ProtectedRoute: React.FC = () => {
   const dispatch = useAppDispatch();
   const { isAuthenticated, user } = useAppSelector((state) => state.auth);
-  
-
-  const [isChecking, setIsChecking] = useState(true);
+  const [isChecking, setIsChecking] = useState(() => {
+    return !!localStorage.getItem("token") && !user;
+  });
 
   useEffect(() => {
     const token = localStorage.getItem("token");
